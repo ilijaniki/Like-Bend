@@ -6,165 +6,9 @@
     <title>ЛАЈК БЕНД Прокупље - Музика за свадбе и прославе</title>
     <meta name="description" content="Лајк Бенд Прокупље - Најбоља музика за свадбе, крштења и рођендане. Позовите нас и резервишите термин!">
     
+    <link rel="stylesheet" href="style.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* ОСНОВНИ СТИЛОВИ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #121212;
-            color: #fff;
-            text-align: center;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* ПОЗАДИНА И СЛОЈ ЗА ЗАТАМЊИВАЊЕ */
-        .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Овде промени име своје главне слике за позадину */
-            background: url('pozadina.jpg') no-repeat center center/cover;
-            z-index: -2;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75); /* Затамњује позадину ради читљивости текста */
-            z-index: -1;
-        }
-
-        /* ГЛАВНИ САДРЖАЈ */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            padding: 60px 0;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: #f1c40f; /* Златна боја */
-            letter-spacing: 4px;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
-            margin-bottom: 5px;
-        }
-
-        .city {
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            color: #ccc;
-            letter-spacing: 3px;
-        }
-
-        /* СЕКЦИЈЕ */
-        section {
-            margin: 40px 0;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        h2 {
-            color: #f1c40f;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-
-        /* ГАЛЕРИЈА */
-        .gallery-img {
-            max-width: 100%;
-            border-radius: 15px;
-            border: 2px solid #f1c40f;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.03);
-        }
-
-        /* КОНТАКТ ДУГМИЋИ */
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-top: 25px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 280px;
-            padding: 16px;
-            text-decoration: none;
-            color: #000;
-            background: #f1c40f;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
-        }
-
-        .btn:hover {
-            background: #fff;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-        }
-
-        .instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            color: #fff;
-        }
-
-        .youtube {
-            background: #FF0000;
-            color: #fff;
-        }
-
-        .youtube:hover {
-            background: #cc0000;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding-bottom: 40px;
-        }
-
-        .copy {
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 20px;
-        }
-
-        /* ПРИЛАГОЂАВАЊЕ МОБИЛНИМ ТЕЛЕФОНИМА */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .btn { width: 100%; max-width: 300px; }
-            section { padding: 20px; }
-        }
-    </style>
 </head>
 <body>
 
@@ -178,21 +22,21 @@
             <p class="city">Прокупље</p>
         </header>
 
-        <section>
+        <section class="card">
             <h2>О нама</h2>
             <p>Професионални бенд за свадбе, крштења, клубове, ресторане и све врсте прослава. Пружамо врхунску атмосферу уз широк репертоар народне и забавне музике. Ваше је само да се веселите!</p>
         </section>
 
-        <section>
+        <section class="card">
             <h2>Галерија</h2>
             <div class="gallery-container">
                 <img src="slika1.jpg" alt="Наступ Лајк Бенда Прокупље" class="gallery-img">
             </div>
         </section>
 
-        <section>
+        <section class="card">
             <h2>Контакт и Резервације</h2>
-            <p>Доступни смо за све ваше прославе:</p>
+            <p>Резервишите термин на време:</p>
             
             <div class="contact-buttons">
                 <a href="tel:+381653480153" class="btn">📞 065 348 0153</a>
@@ -201,13 +45,12 @@
                 <a href="https://www.instagram.com/like_bend_prokuplje/" target="_blank" class="btn instagram">📸 Инстаграм Профил</a>
                 
                 <a href="https://youtube.com/@likebandprokuplje?si=YYcoyq8TLajZTXwH" target="_blank" class="btn youtube">🎬 Јутјуб Видео 1</a>
-                
                 <a href="Https://youtube.com/@likebandprokuplje?si=yuuNU-YZSOBDITyo" target="_blank" class="btn youtube">🎬 Јутјуб Видео 2</a>
             </div>
         </section>
 
         <footer>
-            <p class="copy">&copy; 2026 ЛАЈК БЕНД Прокупље. Сва права задржана.</p>
+            <p class="copy">© 2026 ЛАЈК БЕНД Прокупље. Сва права задржана.</p>
         </footer>
 
     </div>
