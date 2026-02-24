@@ -1,4 +1,4 @@
-/* РЕСЕТОВАЊЕ И ОСНОВЕ */
+/* Osnovni stilovi */
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +10,18 @@ body {
     background-color: #121212;
     color: #fff;
     text-align: center;
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* ПОЗАДИНА */
-.background-image {
+/* Pozadina i Overlay */
+.background-logo {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('logo.png') no-repeat center center/cover;
+    /* Ovde promenite ime vase pozadinske slike ako nije pozadina.jpg */
+    background: url('pozadina.jpg') no-repeat center center/cover;
     z-index: -2;
 }
 
@@ -30,65 +31,63 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
 
-/* КОНТЕЈНЕР */
-.container {
+.content {
+    padding: 20px;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
 }
 
-/* ЗАГЛАВЉЕ */
+/* Header */
 header {
-    padding: 60px 0 40px;
+    padding: 50px 0;
 }
 
 h1 {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    color: #f1c40f;
+    font-size: 3rem;
     letter-spacing: 5px;
-    text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+    color: #f1c40f; /* Zlatna boja */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 .city {
     font-size: 1.2rem;
     text-transform: uppercase;
     color: #ddd;
-    letter-spacing: 4px;
 }
 
-/* СЕКЦИЈЕ (КАРТИЦЕ) */
-.card {
-    margin: 30px 0;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
+/* Sekcije */
+section {
+    margin: 40px 0;
+    padding: 25px; /* Ово држава слику да не буде превелика */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 h2 {
-    color: #f1c40f;
     margin-bottom: 20px;
-    font-size: 1.6rem;
+    color: #f1c40f;
 }
 
-/* ГАЛЕРИЈА */
-.gallery-img {
-    max-width: 100%;
+/* Galerija - Враћено на старо */
+.gallery-container img {
+    max-width: 100%; /* Слика неће бити шира од свог оквира */
+    height: auto;
     border-radius: 15px;
     border: 2px solid #f1c40f;
     transition: transform 0.3s ease;
 }
 
-.gallery-img:hover {
+.gallery-container img:hover {
     transform: scale(1.02);
 }
 
-/* ДУГМИЋИ */
+/* Kontakt i Dugmad */
 .contact-buttons {
     display: flex;
     flex-direction: column;
@@ -98,19 +97,16 @@ h2 {
 }
 
 .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
     padding: 15px;
     text-decoration: none;
     color: #000;
     background: #f1c40f;
     font-weight: bold;
-    border-radius: 50px;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 30px;
+    transition: 0.3s;
 }
 
 .btn:hover {
@@ -118,13 +114,18 @@ h2 {
     transform: translateY(-3px);
 }
 
+/* Специфичне боје за мреже */
 .instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    background: #e1306c;
     color: #fff;
 }
 
+.instagram:hover {
+    background: #fd1d1d;
+}
+
 .youtube {
-    background: #FF0000;
+    background: #FF0000; /* Јутјуб црвена */
     color: #fff;
 }
 
@@ -132,18 +133,15 @@ h2 {
     background: #cc0000;
 }
 
-/* ФУТЕР */
-footer {
-    padding: 40px 0;
-}
-
-.copy {
-    font-size: 0.85rem;
+.copyright {
+    margin-top: 40px;
+    font-size: 0.8rem;
     color: #888;
 }
 
-/* ПРИЛАГОЂАВАЊЕ ЗА ТЕЛЕФОНЕ */
+/* Prilagođavanje za telefone */
 @media (max-width: 600px) {
-    .card { padding: 20px; }
-    h1 { font-size: 2.5rem; }
+    h1 { font-size: 2.2rem; }
+    .content { padding: 15px; }
+    section { padding: 20px; }
 }
