@@ -1,3 +1,4 @@
+/* RESET I OSNOVE */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Pozadina sa logom i animacijom */
+/* LOGO U POZADINI KOJI "DIŠE" */
 .background-logo {
     position: fixed;
     top: 0;
@@ -20,15 +21,15 @@ body {
     width: 100%;
     height: 100%;
     background: url('logo.png') no-repeat center center;
-    background-size: 80%; /* Logo je u centru */
-    opacity: 0.15;
+    background-size: 70%; /* Prilagodite velicinu logoa ovde */
+    opacity: 0.12;
     z-index: -2;
-    animation: pulseLogo 8s infinite ease-in-out;
+    animation: pulseLogo 12s infinite ease-in-out;
 }
 
 @keyframes pulseLogo {
-    0%, 100% { transform: scale(1); opacity: 0.15; }
-    50% { transform: scale(1.1); opacity: 0.25; }
+    0%, 100% { transform: scale(1); opacity: 0.12; }
+    50% { transform: scale(1.1); opacity: 0.18; }
 }
 
 .overlay {
@@ -37,65 +38,76 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0) 20%, rgba(0,0,0,0.9) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,0) 10%, rgba(0,0,0,0.9) 100%);
     z-index: -1;
 }
 
 .content {
-    max-width: 650px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 20px;
 }
 
-header {
-    padding: 80px 0 40px;
-}
+/* HEADER */
+header { padding: 60px 0 40px; }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
     color: #f1c40f;
     letter-spacing: 6px;
-    text-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+    text-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+    margin-bottom: 10px;
 }
 
 .city {
-    font-size: 1.2rem;
-    letter-spacing: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 8px;
     color: #888;
-    margin-top: 5px;
+    text-transform: uppercase;
 }
 
-/* Glassmorphism kartice */
+/* KARTICE (GLASSMORPHISM) */
 .card {
-    background: rgba(255, 255, 255, 0.03);
-    margin: 40px 0;
+    background: rgba(255, 255, 255, 0.04);
+    margin: 35px 0;
     padding: 30px;
     border-radius: 25px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 h2 {
     color: #f1c40f;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-transform: uppercase;
     font-size: 1.4rem;
+    letter-spacing: 2px;
 }
 
-.gallery-container img {
+/* GALERIJA GRID - 4 SLIKE */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 15px;
-    border: 1px solid rgba(241, 196, 15, 0.3);
-    transition: 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.gallery-container img:hover {
-    transform: scale(1.03);
+.gallery-grid img:hover {
+    transform: scale(1.05);
     border-color: #f1c40f;
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.3);
 }
 
-/* Dugmići */
+/* DUGMICI */
 .contact-grid {
     display: flex;
     flex-direction: column;
@@ -104,11 +116,13 @@ h2 {
 
 .social-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .social-row .btn {
     flex: 1;
+    min-width: 120px;
 }
 
 .btn {
@@ -117,29 +131,65 @@ h2 {
     border-radius: 15px;
     font-weight: 700;
     color: #fff;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: block;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.call { background: #1db954; }
+.call { background: #27ae60; }
 .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #bc1888); }
 .youtube { background: #ff0000; }
 
 .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    filter: brightness(1.2);
+    filter: brightness(1.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-.copyright {
-    margin-top: 40px;
+/* PRIJATELJ BENDA */
+.friend-section {
+    border: 1px solid rgba(241, 196, 15, 0.2);
+}
+
+.friend-label {
     font-size: 0.8rem;
-    color: #444;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
-/* Telefon prilagođavanje */
+.friend-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.friend-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f1c40f;
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.2);
+}
+
+.friend-content h4 {
+    font-size: 1.5rem;
+    color: #f1c40f;
+    letter-spacing: 3px;
+}
+
+/* FOOTER */
+footer { padding: 40px 0; }
+.copyright { font-size: 0.8rem; color: #555; }
+
+/* PRILAGODJAVANJE TELEFONIMA */
 @media (max-width: 600px) {
-    h1 { font-size: 2.5rem; }
+    h1 { font-size: 2.8rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid img { height: auto; }
     .social-row { flex-direction: column; }
 }
