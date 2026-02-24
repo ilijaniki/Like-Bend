@@ -22,39 +22,51 @@
 
         <section class="card" data-aos="fade-up">
             <h2>О нама</h2>
-            <p>Професионални бенд за свадбе, крштења и све врсте прослава. Врхунска атмосфера која се памти!</p>
+            <p>Професионални бенд за свадбе, крштења и све врсте прослава. Врхунска атмосфера која се памти и широки репертоар за све укусе!</p>
         </section>
 
-        <section class="card" data-aos="zoom-in">
+        <section class="card" data-aos="fade-up">
             <h2>Галерија</h2>
-            <div class="gallery-container">
-                <img src="slika1.jpg" alt="Наступ Лајк Бенда">
+            <div class="gallery-grid">
+                <img src="slika1.jpg" alt="Nastup 1" data-aos="zoom-in">
+                <img src="slika2.jpg" alt="Nastup 2" data-aos="zoom-in" data-aos-delay="100">
+                <img src="slika3.jpg" alt="Nastup 3" data-aos="zoom-in" data-aos-delay="200">
+                <img src="slika4.jpg" alt="Nastup 4" data-aos="zoom-in" data-aos-delay="300">
             </div>
         </section>
 
-        <footer class="contact card" data-aos="fade-up">
+        <section class="card contact" data-aos="fade-up">
             <h2>Резервације</h2>
-            <p>Кликни за директан контакт:</p>
-            
             <div class="contact-grid">
-                <a href="tel:+381653480153" class="btn call">📞 065 348 0153</a>
-                <a href="tel:+381628230025" class="btn call">📞 062 823 0025</a>
+                <a href="tel:+381653480153" class="btn call">📞 Позови: 065 348 0153</a>
+                <a href="tel:+381628230025" class="btn call">📞 Позови: 062 823 0025</a>
                 
                 <div class="social-row">
-                    <a href="https://www.instagram.com/like_bend_prokuplje/" target="_blank" class="btn instagram">📸 Instagram</a>
-                    <a href="https://youtube.com/@likebandprokuplje?si=YYcoyq8TLajZTXwH" target="_blank" class="btn youtube">🎬 YouTube</a>
+                    <a href="https://www.instagram.com/like_bend_prokuplje/" target="_blank" class="btn instagram">📸 Инстаграм</a>
+                    <a href="https://youtube.com/@likebandprokuplje?si=YYcoyq8TLajZTXwH" target="_blank" class="btn youtube">🎬 Јутјуб 1</a>lol
                 </div>
             </div>
-            
-            <p class="copyright">© 2026 Лајк Бенд</p>
+        </section>
+
+        <section class="card friend-section" data-aos="fade-up">
+            <p class="friend-label">Пријатељ бенда</p>
+            <div class="friend-content">
+                <img src="asound.jpg" alt="A - SOUND" class="friend-img">
+                <h4> A-SOUND</h4>
+            </div>
+        </section>
+
+        <footer>
+            <p class="copyright">© 2026 ЛАЈК БЕНД Прокупље. Сва права задржана.</p>
         </footer>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-          duration: 1000,
-          once: true
+      AOS.init({ 
+          duration: 1000, 
+          once: true,
+          offset: 100
       });
     </script>
 </body>
